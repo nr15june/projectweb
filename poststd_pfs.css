@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* แถบด้านบน */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #bbdefa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo h1 {
+    width: 100px; /* ความกว้างที่กำหนด */
+    height: 100px; /* ความสูงที่กำหนด */
+    margin: 0;
+    text-align: center;
+    line-height: 100px; /* จัดตำแหน่งข้อความแนวตั้ง */
+    background-color: #f0f0f0; /* สีพื้นหลังเพื่อให้เห็นได้ชัด */
+    box-sizing: border-box; /* รวม padding และ border ในความกว้างและความสูง */
+    border-radius: 0; /* ไม่ให้มุมโค้งเป็นวงกลม */
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}

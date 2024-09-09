@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="signupstd_pfs.css">
+</head>
+<body>
+  <div class="container">
+    <div class="background">
+      <img src="assets/thaksinlogo.jpg" alt="background">
+    </div>
+    <div class="form-container">
+      <form id="createAccountForm">
+        <h1>CREATE ACCOUNT !</h1>
+
+        <div class="input-group">
+          <input type="text" id="name" placeholder="ชื่อ-นามสกุล" required>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="username" placeholder="ชื่อผู้ใช่" required>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="password" placeholder="รหัสผ่าน" required>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" placeholder="email@tsu.ac.th" required>
+        </div>
+
+        <div class="input-group">
+          <input type="tel" id="phone" placeholder="เบอร์โทรศัพท์" required>
+        </div>
+
+        <div class="input-group">
+          <select id="agency">
+            <option value="">เลือกหน่วยงาน</option>
+            <option value="หน่วยงานอิสระ">หน่วยงานอิสระ</option>
+            <option value="สำนักงานสภามหาวิทยาลัย">สำนักงานสภามหาวิทยาลัย</option>
+            <option value="สำนักงานมหาวิทยาลัย">สำนักงานมหาวิทยาลัย</option>
+            <option value="สำนักงานวิทยาเขต">สำนักงานวิทยาเขต</option>
+            <option value="ส่วนงานอื่นๆ">ส่วนงานอื่นๆ</option>
+            <option value="องค์กร/โครงการ/กิจกรรม">องค์กร/โครงการ/กิจกรรม</option>
+            <option value="เว็บไซต์หน่วยงานเดิม">เว็บไซต์หน่วยงานเดิม</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <select id="faculty">
+            <option value="">เลือกคณะ</option>
+            <option value="คณะวิทยาศาสตร์และนวัตกรรมดิจิทัล">คณะวิทยาศาสตร์และนวัตกรรมดิจิทัล</option>
+            <option value="คณะวิทยาการสุขภาพและการกีฬา">คณะวิทยาการสุขภาพและการกีฬา</option>
+            <option value="คณะเทคโนโลยีและการพัฒนาชุมชน">คณะเทคโนโลยีและการพัฒนาชุมชน</option>
+            <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์</option>
+            <option value="คณะพยาบาลศาสตร์">คณะพยาบาลศาสตร์</option>
+            <option value="คณะนิติศาสตร์">คณะนิติศาสตร์</option>
+            <option value="คณะอุตสาหกรรมเกษตรและชีวภาพ">คณะอุตสาหกรรมเกษตรและชีวภาพ</option>
+            <option value="คณะศึกษาศาสตร์">คณะศึกษาศาสตร์</option>
+            <option value="คณะสหวิทยาการและการประกอบการ">คณะสหวิทยาการและการประกอบการ</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button type="button" onclick="goBack()">ย้อนกลับ</button>
+          <button type="submit">ต่อไป</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    document.getElementById('createAccountForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+
+      const name = document.getElementById('name').value;
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const agency = document.getElementById('agency').value;
+      const faculty = document.getElementById('faculty').value;
+
+      if (name && email && phone && (agency || faculty)) {
+        window.location.href = 'webperfessor.html'; // เปลี่ยนไปยังหน้าใหม่
+      } else {
+        alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+      }
+    });
+  </script>
+</body>
+</html>

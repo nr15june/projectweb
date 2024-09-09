@@ -1,0 +1,151 @@
+/* styles.css */
+
+/* รีเซ็ตค่าเริ่มต้นของเบราว์เซอร์ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* แถบด้านบน */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #bbdefa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo h1 {
+    width: 100px; /* ความกว้างที่กำหนด */
+    height: 100px; /* ความสูงที่กำหนด */
+    margin: 0;
+    text-align: center;
+    line-height: 100px; /* จัดตำแหน่งข้อความแนวตั้ง */
+    background-color: #f0f0f0; /* สีพื้นหลังเพื่อให้เห็นได้ชัด */
+    box-sizing: border-box; /* รวม padding และ border ในความกว้างและความสูง */
+    border-radius: 0; /* ไม่ให้มุมโค้งเป็นวงกลม */
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* คอนเทนต์หลักและการกรอง */
+.container {
+    display: flex;
+    margin-top: 60px; /* ความสูงของแถบด้านบน */
+    height: calc(100vh - 60px);
+    overflow: hidden; /* ป้องกันการเลื่อนเกินขอบเขต */
+}
+
+/* คอนเทนต์หลัก */
+.main-content {
+    flex: 3; /* 75% ของพื้นที่ */
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f0f2f5;
+}
+
+/* กล่องโพสต์ */
+.post-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.post-box textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.post-button {
+    margin-top: 10px;
+    background-color: #4fc3f7;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนแปลงสีพื้นหลังอย่างราบรื่น */
+}
+
+.post-button:hover {
+    background-color: #0288d1;
+}
+
+.post-button:focus {
+    outline: 2px solid #0288d1; /* เพิ่มขอบเมื่อปุ่มได้รับการเลือก */
+    outline-offset: 2px;
+}
+
+/* การกรองโพสต์ */
+.filter-section {
+    flex: 1; /* 25% ของพื้นที่ */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-left: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.filter-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.filter-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* การตอบสนองบนหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .main-content, .filter-section {
+        flex: none;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .filter-section {
+        border-left: none;
+        border-top: 1px solid #ddd;
+    }
+}
