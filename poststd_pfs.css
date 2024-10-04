@@ -1,43 +1,90 @@
-* {
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
     height: 100%;
     font-family: Arial, sans-serif;
 }
 
-/* แถบด้านบน */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #bbdefa;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    padding: 10px;
+    background-color: #bbdefa; /* เปลี่ยนสีพื้นหลังตามที่ต้องการ */
+    border-bottom: 1px solid #ccc;
 }
 
-.logo h1 {
-    width: 100px; /* ความกว้างที่กำหนด */
-    height: 100px; /* ความสูงที่กำหนด */
-    margin: 0;
+.logo img {
+    height: 50px; /* ขนาดโลโก้ */
+}
+
+.account-icon {
+    padding: 10px; /* เพิ่มระยะห่างภายใน */
+}
+
+.account-icon a {
+    font-size: 30px; /* ขนาดไอคอน */
+    color: #ffffff; /* สีไอคอน */
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    margin: 5px; /* เพิ่มระยะห่างภายนอก */
+}
+
+.account-icon a:hover {
+    color: #23617e; /* เปลี่ยนสีเมื่อวางเมาส์ */
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.post-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.post-form h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    background-color: #bbdefa; /* สีพื้นหลังของปุ่ม */
+    color: rgb(43, 53, 138); /* สีข้อความในปุ่ม */
+    border: none;
+    padding: 10px 20px;
     text-align: center;
-    line-height: 100px; /* จัดตำแหน่งข้อความแนวตั้ง */
-    background-color: #f0f0f0; /* สีพื้นหลังเพื่อให้เห็นได้ชัด */
-    box-sizing: border-box; /* รวม padding และ border ในความกว้างและความสูง */
-    border-radius: 0; /* ไม่ให้มุมโค้งเป็นวงกลม */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-.profile-picture {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+.submit-button:hover {
+    background-color: #aad8e6; /* สีพื้นหลังของปุ่มเมื่อวางเมาส์ */
 }
